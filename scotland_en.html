@@ -6,11 +6,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Philip Gerrish">
-<meta name="author" content="Ramiro Dominguez">
-<meta name="author" content="Erika Rodriguez">
-<meta name="author" content="Benjamin Galeota-Sprung">
-<meta name="author" content="Rich Lenski">
 
 <title>A Modern Synthesis for Haploids</title>
 <style>
@@ -25,179 +20,164 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
 </style>
 
 
 <script src="scotland_en_files/libs/clipboard/clipboard.min.js"></script>
-<script src="scotland_en_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="scotland_en_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="scotland_en_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="scotland_en_files/libs/quarto-html/tabby.min.js"></script>
 <script src="scotland_en_files/libs/quarto-html/popper.min.js"></script>
 <script src="scotland_en_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="scotland_en_files/libs/quarto-html/anchor.min.js"></script>
 <link href="scotland_en_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="scotland_en_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="scotland_en_files/libs/quarto-html/quarto-html-734cb40618f438257b19a1e532635a32.min.css" rel="stylesheet" append-hash="true" data-mode="light">
 <link href="scotland_en_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="scotland_en_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="scotland_en_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="scotland_en_files/libs/bootstrap/bootstrap-a74871fe4945b66d259aafc266475145.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <style>html{ scroll-behavior: smooth; }</style>
 
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="quarto-light">
-
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-full">
-
-<main class="content column-page" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">A <em>Modern Synthesis</em> for Haploids</h1>
-</div>
+<body>
 
 
-<div class="quarto-title-meta-author column-page">
-  <div class="quarto-title-meta-heading">Authors</div>
-  <div class="quarto-title-meta-heading">Affiliations</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author">Philip Gerrish </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Biology, UNM
-          </p>
-        <p class="affiliation">
-            Math, UAEH
-          </p>
-        <p class="affiliation">
-            Math/Biol, LANL
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Ramiro Dominguez </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Math/Physics, UAEH
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Erika Rodriguez </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Math/Biol, UAEH
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Benjamin Galeota-Sprung </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Biology, U of Penn
-          </p>
-      </div>
-    <div class="quarto-title-meta-contents">
-    <p class="author">Rich Lenski </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Biology, MSU
-          </p>
-      </div>
-  </div>
-
-<div class="quarto-title-meta column-page">
-
-      
-  
-    
-  </div>
-  
-
+<header id="title-block-header">
+<h1 class="title">A Modern Synthesis for Haploids</h1>
 
 </header>
 
 
 <style>
-/* --- Typography --- */
+
+/* --- Global --- */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
-  line-height: 1.65;
-  font-size: 1.05rem;
-  background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #111;
+  background: #ffffff;
 }
 
-/* --- Title --- */
-h1.title {
+/* --- Hero Section --- */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 8%;
+  background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3.2rem;
   font-weight: 700;
-  font-size: 2.4rem;
   letter-spacing: -0.02em;
+  margin-bottom: 0.5em;
 }
 
-/* --- Author block --- */
-.quarto-title-meta {
-  opacity: 0.85;
+.hero h1 em {
+  font-style: italic;
+  opacity: 0.9;
 }
 
-/* --- Paragraph styling --- */
-p {
-  max-width: 850px;
-  margin: 1.2em auto;
+.authors {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  max-width: 900px;
 }
 
-/* --- Highlight block --- */
+.affiliations {
+  margin-top: 1em;
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+/* --- Content --- */
+.content {
+  max-width: 900px;
+  margin: 4em auto;
+  padding: 0 2em;
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
+
+/* --- Highlight blocks --- */
 .highlight {
-  background: #eef4ff;
-  border-left: 4px solid #4a6cf7;
-  padding: 1em 1.2em;
-  border-radius: 6px;
-  margin: 2em auto;
-  max-width: 850px;
+  background: #f4f7ff;
+  border-left: 5px solid #4a6cf7;
+  padding: 1.2em;
+  border-radius: 8px;
+  margin: 2.5em 0;
   font-weight: 500;
 }
 
-/* --- Questions block --- */
-.questions {
-  background: #fff7e6;
-  border-left: 4px solid #ffb347;
-  padding: 1em 1.2em;
-  border-radius: 6px;
-  margin: 2em auto;
-  max-width: 850px;
+.critical {
+  background: #fff0f0;
+  border-left: 5px solid #d7263d;
+  padding: 1.2em;
+  border-radius: 8px;
+  margin: 2.5em 0;
+  font-weight: 600;
 }
 
-/* --- Emphasis --- */
-strong {
-  color: #d7263d;
-  letter-spacing: 0.02em;
+.questions {
+  background: #fff8e6;
+  border-left: 5px solid #ffb347;
+  padding: 1.2em;
+  border-radius: 8px;
+  margin: 2.5em 0;
 }
+
+/* --- Footer spacing --- */
+.spacer {
+  height: 80px;
+}
+
 </style>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
+<section id="a-modern-synthesis-for-haploids" class="hero">
+<h1>A <em>Modern Synthesis</em> for Haploids</h1>
+<div class="authors">
+<p>Philip Gerrish<sup>1,2,3</sup>,<br>
+Ramiro Dominguez<sup>2</sup>,<br>
+Erika Rodriguez<sup>2</sup>,<br>
+Benjamin Galeota-Sprung<sup>4</sup>,<br>
+Rich Lenski<sup>5</sup></p>
+</div>
+<div class="affiliations">
+<p><sup>1</sup> Biology, University of New Mexico<br>
+<sup>2</sup> Mathematics, Universidad Autónoma del Estado de Hidalgo<br>
+<sup>3</sup> Mathematics &amp; Biology, Los Alamos National Laboratory<br>
+<sup>4</sup> Biology, University of Pennsylvania<br>
+<sup>5</sup> Biology, Michigan State University</p>
+</div>
+</section>
+<div class="content">
 <p>Darwin went to his grave having never resolved a devilish caveat to his theory of natural selection: theories of inheritance that were accepted by the scientific community in his day predicted phenotypic “blending” that, over the course of a few generations, would deplete the variation required by his theory. Darwin was painfully aware of this caveat.</p>
 <p>At the time, far from Darwin’s native England, an Austrian monk (Mendel) was performing meticulous experiments with peas that would ultimately resolve the incompatibility between mechanisms of inheritance and Darwin’s theory. Poignantly, Darwin and Mendel coincided at a conference in Germany, but Darwin did not attend Mendel’s talk and vice versa.</p>
 <div class="highlight">
 <p>It wasn’t until much later, in what is referred to as the “modern synthesis”, that the penny dropped and it was recognized that Darwin’s theory was rescued by Mendel. Mendelian inheritance maintains a kind of <em>reservoir</em> of the variation required by Darwin’s theory.</p>
 </div>
-<div class="highlight">
-<p><strong>BUT!!</strong> It only works for diploids.</p>
+<div class="critical">
+<p>BUT — it only works for diploids.</p>
 </div>
 <div class="questions">
 <p>So why do haploids exist? How do they maintain a reservoir of the variation required by Darwin’s theory?</p>
-<p>Cryptic variation? Phenotypic (individual) variation? Mutation? Recombination? Or perhaps a potpourri of many of these and more?</p>
+<p>Cryptic variation? Phenotypic variation? Mutation? Recombination? Or a structured interplay of all of these?</p>
 </div>
-<p>It is remarkable to note that, to this day, Darwin’s theory has still not been reconciled with haploidy in a general way. It seems there is plenty of overlap between these questions and those addressed in this workshop.</p>
-<p>My talk will address this overlap as contributing to the general goal of developing a “modern synthesis” for haploids.</p>
-</section>
+<p>It is remarkable to note that, to this day, Darwin’s theory has still not been reconciled with haploidy in a general way. There is clear conceptual overlap between this problem and the themes explored in this workshop.</p>
+<p>My talk will focus on this overlap, as part of a broader effort to develop a <em>modern synthesis</em> for haploids.</p>
+</div>
+<div class="spacer">
 
-</main>
-<!-- /main column -->
+</div>
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+    tabsets.forEach(function(tabset) {
+      const tabby = new Tabby('#' + tabset.id);
+    });
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -296,7 +276,7 @@ strong {
         },
         interactive: true,
         interactiveBorder: 10,
-        theme: 'quarto',
+        theme: 'light-border',
         placement: 'bottom-start',
       };
       if (contentFn) {
@@ -596,7 +576,6 @@ strong {
     }
   });
   </script>
-</div> <!-- /content -->
 
 
 
